@@ -4,8 +4,6 @@ pipeline {
         IMAGE_NAME = 'muhammadsyahdimas/simple-app'
         REGISTRY = 'https://index.docker.io/v1/'
         REGISTRY_CREDENTIALS = 'dockerhub-credentials'
-        PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-        DOCKER_HOST = "unix:///var/run/docker.sock"
     }
     stages {
         stage('Checkout') {
@@ -17,7 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Mulai build aplikasi'
-                sh 'echo "Build selesai ✅"'
+                bat 'echo Build selesai'
             }
         }
         stage('Build Docker Image') {
